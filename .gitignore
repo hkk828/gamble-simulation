@@ -1,0 +1,14 @@
+# macOS files
+**/.DS_Store
+
+# files in venv
+venv
+
+# bytecode
+__pycache__/
+
+# package info
+gamble.egg-info
+
+# vscode
+.vscode
