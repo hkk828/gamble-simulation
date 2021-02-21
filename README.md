@@ -18,6 +18,17 @@ Theoretically, one can never lose money with the martingale strategy. However, n
 In this repository, I shared codes to implement monte carlo simulation for martingale strategy.  
 ```simulation``` module in ```utils``` directory can take any other strategy that conforms the structure of ```martingale``` class in ```strategy.martingale```. Therefore, one can simulate one's own strategy with some adjustments.  
 
+If you want to run any module on its own not through ```main.py```, do the followoing.  
+Type the following line on command line in the root directory where the ```main.py``` is stored.
+```bash
+pip install -e .
+```
+or
+```bash
+python3.x -m pip install -e .
+```
+with x replaced by the python version you use.
+
 **Parameters for the martingale strategy**  
 ```main.py``` creates the martinagle class object with  
   number of bets = 100  
