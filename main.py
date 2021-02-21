@@ -8,7 +8,7 @@ from sys import maxsize
 
 if __name__ == '__main__':
     # parameters for the martingale strategy
-    n_trial = 200
+    n_trial = 100
     win_prob = 18 / 37
     asset = 1024
     default_bet = 1
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # parameters for the simulation
     seed = random.randrange(maxsize)    # generate random seed from 0 ~ sys.maxsize-1
     random.seed(seed)                   # set the random seed for the reproducibility
-    n_sim = 1000
+    n_sim = 100
 
     # create betting strategy object
     betStrategy = martingale(win_prob=win_prob, asset=asset, default_bet=default_bet, ratio=ratio)
@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     # distribution of max_consecutive_lose when not bankrupt (only executed if there was at least one bankruptcy)
     if bankruptcy:
-        lose_dist.subtract([10])    # bankrupt only if lost 10 times
+        lose_dist.pop(10)    # bankrupt only if lost 10 times
         betplot.barChart(x=lose_dist.keys(),
                         y=lose_dist.values(),
                         save=True,
