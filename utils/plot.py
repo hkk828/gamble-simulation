@@ -54,16 +54,16 @@ class betplot:
 
         # scatter and annotate the minimum point
         betplot._shAnnotate(xyScatter=(min_pos, min_asset),
-                            xyAnnotate=(0, min_asset+2), text='min')
+                            xyAnnotate=(0, min_asset), text='min')
 
         # scatter and annotate the maximum point
         betplot._shAnnotate(xyScatter=(max_pos, max_asset),
-                            xyAnnotate=(0, max_asset+2), text='max')
+                            xyAnnotate=(0, max_asset), text='max')
 
         # scatter and annotate the last point
         betplot._shAnnotate(xyScatter=(trials-1, asset_history[-1]),
                             linestyles='dashed',
-                            xyAnnotate=(trials, asset_history[-1]+2), text='final')
+                            xyAnnotate=(trials, asset_history[-1]), text='final')
 
         # give title with max_consecutive_lose
         plt.title(label=f'{max_consecutive_lose} consecutive loses at the maximum')
